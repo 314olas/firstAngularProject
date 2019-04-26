@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import {fade} from '../../animation';
 import {FormBuilder, FormArray, Validators} from '@angular/forms';
-import { Observable, from } from 'rxjs';
+import {Observable, from, Subscription} from 'rxjs';
 
 // @ts-ignore
 @Component({
@@ -10,27 +10,28 @@ import { Observable, from } from 'rxjs';
   styleUrls: ['./contacts-us-main-content.component.scss'],
   animations: [ fade ]
 })
-export class ContactsUsMainContentComponent implements OnInit {
+export class ContactsUsMainContentComponent implements OnInit, OnDestroy {
   myForm = this.myFormBilder.group({
     name: ['', Validators.minLength(2)],
     email: [''],
     message: []
   });
+  myFormVal: Subscription;
 
   constructor( private myFormBilder: FormBuilder) { }
 
   ngOnInit() {
-    const formObserv = Observable.create((obs) => {
-      obs.next(3);
-    });
+    this.myFormVal = this.myForm.get('name').valueChanges.subscribe(
+      () => console.log(this.myForm)
+    );
+  }
 
-    console.log('started');
-    // from( this.myForm ).subscribe( () => console.log('Done'));
-    const sub = formObserv.subscribe((value) => console.log('next' + value));
+  ngOnDestroy() {
+
   }
 
   onSubmit() {
-    console.log(this.myForm);
+    this.myFormVal.unsubscribe();
     }
 
 }

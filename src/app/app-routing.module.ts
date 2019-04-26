@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'testimonial', component: TestimonialsComponent },
   { path: 'what we do', component: WhatWeDoComponent },
-  { path: 'contact us', loadChildren: './contacts-us/contact-us.module#ContactsUsModule' },
+  { path: 'contact us', loadChildren: './contact-us/contact-us.module#ContactsUsModule' },
   { path: '**', component: NotFoundComponent }
 ];
 
