@@ -1,10 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import {state, style, trigger} from '@angular/animations';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss'],
+
 })
-export class AppComponent {
-  title = 'angular';
+export class AppComponent implements OnInit {
+
+  constructor(private route: ActivatedRoute,
+              private router: Router) {}
+
+  ngOnInit() {
+    console.log( this.route, this.router);
+  }
 }
