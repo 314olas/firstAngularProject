@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {state, style, trigger} from '@angular/animations';
 
 @Component({
   selector: 'app-contact-us',

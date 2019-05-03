@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import {state, style, trigger} from '@angular/animations';
 
@@ -10,10 +10,11 @@ import {state, style, trigger} from '@angular/animations';
 })
 export class AppComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute,
-              private router: Router) {}
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router
+  ) {}
 
   ngOnInit() {
-    console.log( this.route, this.router);
   }
 }

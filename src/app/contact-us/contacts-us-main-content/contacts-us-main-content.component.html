@@ -22,38 +22,7 @@
           <div class="title-holder title-decoration text-center mb-4 text-uppercase">
             <h4>recent post</h4>
           </div>
-          <div class="posts">
-            <div class="d-flex mb-3">
-              <div class="img-holder mr-2" style="background-image: url('../../img/img-1.jpg')"></div>
-              <div class="text-content d-flex flex-column justify-content-center">
-                <h4>Lorem Ipsum Dolor Sit Amet.</h4><a class="btn btn-sm text-uppercase text-white align-self-start btn-primary" routerLink="links">magazine</a>
-              </div>
-            </div>
-            <div class="d-flex mb-3">
-              <div class="img-holder mr-2" style="background-image: url('../../img/img-3.jpg')"></div>
-              <div class="text-content d-flex flex-column justify-content-center">
-                <h4>Lorem Ipsum Dolor Sit Amet.</h4><a class="btn btn-sm text-uppercase text-white align-self-start btn-warning" href="#">ui design</a>
-              </div>
-            </div>
-            <div class="d-flex mb-3">
-              <div class="img-holder mr-2" style="background-image: url('../../img/img-6.jpg')"></div>
-              <div class="text-content d-flex flex-column justify-content-center">
-                <h4>Lorem Ipsum Dolor Sit Amet.</h4><a class="btn btn-sm text-uppercase text-white align-self-start btn-info" href="#">photography</a>
-              </div>
-            </div>
-            <div class="d-flex mb-3">
-              <div class="img-holder mr-2" style="background-image: url('../../img/img-8.jpg')"></div>
-              <div class="text-content d-flex flex-column justify-content-center">
-                <h4>Lorem Ipsum Dolor Sit Amet.</h4><a class="btn btn-sm text-uppercase text-white align-self-start btn-danger" href="#">book</a>
-              </div>
-            </div>
-            <div class="d-flex mb-3">
-              <div class="img-holder mr-2" style="background-image: url('../../img/img-10.jpg')"></div>
-              <div class="text-content d-flex flex-column justify-content-center">
-                <h4>Lorem Ipsum Dolor Sit Amet.</h4><a class="btn btn-sm text-uppercase text-white align-self-start btn-warning" href="#">ui design</a>
-              </div>
-            </div>
-          </div>
+          <app-contact-us-posts></app-contact-us-posts>
         </div>
       </div>
       <div class="col-lg-4">
@@ -72,16 +41,10 @@
             </ul>
           </div>
         </div>
-        <form class="contact-form d-flex flex-column" action="#" [formGroup]="myForm" (ngSubmit)="onSubmit()">
-          <input class="form-control" type="text" placeholder="Your Name..." name="name" formControlName="name"/>
-          <input class="form-control" type="email" placeholder="Your Email..." name="email" formControlName="email"/>
-          <textarea class="form-control" placeholder="Your Message..." rows="6" name="message" formControlName="message"></textarea>
-          <button class="btn btn-success text-uppercase" type="submit" >send</button>
-        </form>
+        <app-contact-us-form></app-contact-us-form>
       </div>
     </div>
   </div>
 </section>
-<p> {{myForm.value}}</p>
 
 <router-outlet></router-outlet>

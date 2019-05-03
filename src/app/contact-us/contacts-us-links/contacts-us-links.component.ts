@@ -16,12 +16,10 @@ export class ContactsUsLinksComponent implements OnInit {
   constructor(private router: Router ) { }
 
   ngOnInit() {
-    console.log(this.router.url );
   }
 
   goBack() {
     this.router.navigate(['/contact us']);
-    console.log( this.state );
   }
 
 }

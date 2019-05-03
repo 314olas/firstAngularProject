@@ -6,6 +6,7 @@ import { HomeComponent } from './home/home.component';
 import { TestimonialsComponent } from './testimonials/testimonials.component';
 import { WhatWeDoComponent } from './what-we-do/what-we-do.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import {SendSuccessMessageComponent} from './contact-us/send-success-message/send-success-message.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -13,8 +14,11 @@ const routes: Routes = [
   { path: 'testimonial', component: TestimonialsComponent },
   { path: 'what we do', component: WhatWeDoComponent },
   { path: 'contact us', loadChildren: './contact-us/contact-us.module#ContactsUsModule' },
+  { path: 'success', component: SendSuccessMessageComponent },
   { path: '**', component: NotFoundComponent }
+
 ];
+
 
 @NgModule({
   imports: [

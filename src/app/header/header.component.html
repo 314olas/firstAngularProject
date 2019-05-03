@@ -1,8 +1,8 @@
 <header>
   <div class="container">
-    <nav class="navbar navbar-expand-lg navbar-dark"><a class="logo" href="/"><img src="../../img/logo.png" alt="logo"></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-      <div class="collapse navbar-collapse justify-content-between nav-position" id="navbarSupportedContent">
+    <nav class="navbar navbar-expand-lg navbar-dark"><a class="logo" routerLink="/home"><img src="assets/img/logo.png" alt="logo"></a>
+      <button class="navbar-toggler" type="button" (click)="showNavbar()" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse justify-content-between nav-position" id="navbarSupportedContent" [style.display]="isShow">
         <ul class="navbar-nav" >
           <ng-container *ngFor="let item of links">
             <li class="nav-item" routerLinkActive="active"><a class="nav-link" routerLink={{item}}>{{item | titlecase}}</a></li>

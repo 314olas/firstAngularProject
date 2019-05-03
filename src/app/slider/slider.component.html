@@ -1,0 +1,20 @@
+
+<div class="slider">
+  <button class="prev" type="button" (click)="prev()"></button>
+  <div class="slider-list"  >
+    <ng-container>
+      <div class="slider-item">
+        <blockquote>
+          <q class="d-block mb-4">{{items[counter].content}}</q>
+          <div class="d-flex justify-content-center">
+            <div class="img-holder" [style.backgroundImage]="'url(' + items[counter].photo +')'"></div><a class="ml-2" href="">
+            <cite class="description text-left"><span><strong>{{items[counter].name}}</strong></span><span>{{items[counter].someText}}</span></cite></a>
+          </div>
+        </blockquote>
+      </div>
+    </ng-container>
+  </div>
+  <button class="next" type="button" (click)="next()"></button>
+</div>
+
+

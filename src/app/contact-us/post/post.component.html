@@ -1,0 +1,6 @@
+<div class="d-flex mb-3" >
+  <div class="img-holder mr-2" [style.backgroundImage]="'url(assets/img/img-' + item.id + '.jpg)'"></div>
+  <div class="text-content d-flex flex-column justify-content-center">
+    <h4>{{item.name}}</h4><a class="btn btn-sm text-uppercase text-white align-self-start {{getBtnClass(item.color)}}" href="#" >{{item.email}}</a>
+  </div>
+</div>

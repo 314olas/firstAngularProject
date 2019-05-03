@@ -1,0 +1,12 @@
+<div class="row" id="works">
+  <ng-container *ngFor="let item of itemsToDisplay | async">
+    <div class="custom-block grid-item" *ngIf="checkFilter(item.description)">
+      <div class="mb-4" >
+        <p>{{num}}</p>
+        <a href="{{item.path}}">
+          <div class="img-holder" [style.backgroundImage]="'url(' + item.workImage +')'"></div>
+        </a>
+      </div>
+    </div>
+  </ng-container>
+</div>

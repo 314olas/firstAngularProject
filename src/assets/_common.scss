@@ -144,7 +144,7 @@ h3{
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  //background-image: url('../img/header-bg.jpg');
+  background-image: url('assets/img/header-bg.jpg');
 }
 
 .intro{
@@ -232,6 +232,15 @@ h3{
 
 .latest-work{
 
+  a:not([href]){
+    cursor: pointer;
+    color: $white;
+
+    &:hover{
+      color: $white;
+    }
+  }
+
   .btn.btn-light.active {
     background-color: $success;
     color: $white;
@@ -249,6 +258,8 @@ h3{
   .custom-block{
     flex: 0 0 auto;
     width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
 
     @include media-breakpoint-up(sm) {
       flex: 0 0 auto;

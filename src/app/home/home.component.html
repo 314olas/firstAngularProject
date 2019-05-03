@@ -1,4 +1,4 @@
-<main id="main" @fade>
+<main id="main" @fade (click)="showNav()">
   <div class="top-block overlay">
     <section class="intro flex-grow-1 align-items-center d-flex">
       <div class="container">
@@ -31,23 +31,24 @@
       </div>
       <div class="d-flex justify-content-center">
         <div class="btn-group btn-filter-group" aria-label="filter-button">
-          <button class="filter btn btn-light active" type="button" data-filter="*">Photography</button>
-          <button class="filter btn btn-light" type="button" data-filter=".nature">Design</button>
-          <button class="filter btn btn-light" type="button" data-filter=".tables">Print</button>
+          <button class="filter btn btn-light active" type="button"  (click)="filterHendler(filters.all)">All</button>
+          <button class="filter btn btn-light" type="button"  (click)="filterHendler(filters.nature)">Nature</button>
+          <button class="filter btn btn-light" type="button" (click)="filterHendler(filters.table)">Tables</button>
         </div>
       </div>
     </div>
     <div class="container common-section">
       <div class="row justify-content-center">
         <div class="col-lg-10">
-          <div class="row"></div>
+          <app-latest-work></app-latest-work>
         </div>
       </div>
     </div>
-    <div class="grid">
-      <div class="custom-block"></div>
+    <div class="text-center">
+      <a class="btn btn-success btn-arrow" id="vieMore" (click)="addMoreWorks()">View more work
+        <span class="icon-arrow-right"></span>
+      </a>
     </div>
-    <div class="text-center"><a class="btn btn-success btn-arrow" href="#" id="vieMore">View more work<span class="icon-arrow-right"></span></a></div>
   </section>
 
   <section class="our-client common-section">
@@ -65,14 +66,14 @@
         </div>
       </div>
       <div class="row common-section">
-        <div class="col-md-6 col-lg-3 d-flex align-items-center justify-content-center mb-5"><a href="#"><img src="img/google.png" alt="img/google.png"></a></div>
-        <div class="col-md-6 col-lg-3 d-flex align-items-center justify-content-center mb-5"><a href="#"><img src="img/yahoo.png" alt="img/yahoo.png"></a></div>
-        <div class="col-md-6 col-lg-3 d-flex align-items-center justify-content-center mb-5"><a href="#"><img src="img/Microsoft.png" alt="img/Microsoft.png"></a></div>
-        <div class="col-md-6 col-lg-3 d-flex align-items-center justify-content-center mb-5"><a href="#"><img src="img/intel.png" alt="img/intel.png"></a></div>
-        <div class="col-md-6 col-lg-3 d-flex align-items-center justify-content-center mb-5"><a href="#"><img src="img/qualcom.png" alt="img/qualcom.png"></a></div>
-        <div class="col-md-6 col-lg-3 d-flex align-items-center justify-content-center mb-5"><a href="#"><img src="img/cisco.png" alt="img/cisco.png"></a></div>
-        <div class="col-md-6 col-lg-3 d-flex align-items-center justify-content-center mb-5"><a href="#"><img src="img/apple.png" alt="img/apple.png"></a></div>
-        <div class="col-md-6 col-lg-3 d-flex align-items-center justify-content-center mb-5"><a href="#"><img src="img/asus.png" alt="img/asus.png"></a></div>
+        <div class="col-md-6 col-lg-3 d-flex align-items-center justify-content-center mb-5"><a href="#"><img src="assets/img/google.png" alt="img/google.png"></a></div>
+        <div class="col-md-6 col-lg-3 d-flex align-items-center justify-content-center mb-5"><a href="#"><img src="assets/img/yahoo.png" alt="img/yahoo.png"></a></div>
+        <div class="col-md-6 col-lg-3 d-flex align-items-center justify-content-center mb-5"><a href="#"><img src="assets/img/Microsoft.png" alt="img/Microsoft.png"></a></div>
+        <div class="col-md-6 col-lg-3 d-flex align-items-center justify-content-center mb-5"><a href="#"><img src="assets/img/intel.png" alt="img/intel.png"></a></div>
+        <div class="col-md-6 col-lg-3 d-flex align-items-center justify-content-center mb-5"><a href="#"><img src="assets/img/qualcom.png" alt="img/qualcom.png"></a></div>
+        <div class="col-md-6 col-lg-3 d-flex align-items-center justify-content-center mb-5"><a href="#"><img src="assets/img/cisco.png" alt="img/cisco.png"></a></div>
+        <div class="col-md-6 col-lg-3 d-flex align-items-center justify-content-center mb-5"><a href="#"><img src="assets/img/apple.png" alt="img/apple.png"></a></div>
+        <div class="col-md-6 col-lg-3 d-flex align-items-center justify-content-center mb-5"><a href="#"><img src="assets/img/asus.png" alt="img/asus.png"></a></div>
       </div>
     </div>
     <div class="container d-flex justify-content-center"><a class="btn btn-gray btn-arrow" href="#">See all client<span class="icon-arrow-right"></span></a></div>
@@ -96,7 +97,7 @@
           <div class="row justify-content-center">
             <div class="col-md-5 col-lg-2">
               <div class="d-flex flex-column align-items-center mb-5 mb-lg-0">
-                <div class="img-holder" style="background-image: url('../../img/krisna.jpg')"></div>
+                <div class="img-holder" style="background-image: url('../../assets/img/krisna.jpg')"></div>
                 <div class="text-white common-decoration-block">
                   <p>Krisna Wijaya</p>
                 </div>
@@ -111,7 +112,7 @@
             </div>
             <div class="col-md-5 col-lg-2">
               <div class="d-flex flex-column align-items-center mb-5 mb-lg-0">
-                <div class="img-holder" style="background-image: url('../../img/gabriel.jpg')"></div>
+                <div class="img-holder" style="background-image: url('../../assets/img/gabriel.jpg')"></div>
                 <div class="text-white common-decoration-block">
                   <p>Gabriel Yoshua</p>
                 </div>
@@ -126,7 +127,7 @@
             </div>
             <div class="col-md-5 col-lg-2">
               <div class="d-flex flex-column align-items-center mb-5 mb-lg-0">
-                <div class="img-holder" style="background-image: url('../../img/adik.jpg')"></div>
+                <div class="img-holder" style="background-image: url('../../assets/img/adik.jpg')"></div>
                 <div class="text-white common-decoration-block">
                   <p>Adik N.K.L</p>
                 </div>
@@ -141,7 +142,7 @@
             </div>
             <div class="col-md-5 col-lg-2">
               <div class="d-flex flex-column align-items-center mb-5 mb-lg-0">
-                <div class="img-holder" style="background-image: url('../../img/zan.jpg')"></div>
+                <div class="img-holder" style="background-image: url('../../assets/img/zan.jpg')"></div>
                 <div class="text-white common-decoration-block">
                   <p>Zan D.J</p>
                 </div>
@@ -156,7 +157,7 @@
             </div>
             <div class="col-md-5 col-lg-2">
               <div class="d-flex flex-column align-items-center mb-5 mb-lg-0">
-                <div class="img-holder" style="background-image: url('../../img/falzal.jpg')"></div>
+                <div class="img-holder" style="background-image: url('../../assets/img/falzal.jpg')"></div>
                 <div class="text-white common-decoration-block">
                   <p>Faizal Febri</p>
                 </div>
@@ -185,10 +186,10 @@
     </div>
     <div class="container">
       <div class="row">
-        <div class="col-lg-2 d-flex align-items-center justify-content-center mb-5 mb-lg-0"><a href="#"><img src="img/CNN.png" alt="CNN"></a></div>
-        <div class="col-lg-2 d-flex align-items-center justify-content-center mb-5 mb-lg-0"><a href="#"><img src="img/TC.png" alt="TC"></a></div>
-        <div class="col-lg-3 d-flex align-items-center justify-content-center mb-5 mb-lg-0"><a href="#"><img src="img/BBC.png" alt="BBC"></a></div>
-        <div class="col-lg-5 d-flex align-items-center justify-content-center"><a href="#"><img src="img/NYT.png" alt="The New York times"></a></div>
+        <div class="col-lg-2 d-flex align-items-center justify-content-center mb-5 mb-lg-0"><a href="#"><img src="assets/img/CNN.png" alt="CNN"></a></div>
+        <div class="col-lg-2 d-flex align-items-center justify-content-center mb-5 mb-lg-0"><a href="#"><img src="assets/img/TC.png" alt="TC"></a></div>
+        <div class="col-lg-3 d-flex align-items-center justify-content-center mb-5 mb-lg-0"><a href="#"><img src="assets/img/BBC.png" alt="BBC"></a></div>
+        <div class="col-lg-5 d-flex align-items-center justify-content-center"><a href="#"><img src="assets/img/NYT.png" alt="The New York times"></a></div>
       </div>
     </div>
   </section>
